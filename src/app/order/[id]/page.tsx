@@ -13,7 +13,7 @@ const SingleItemPage = ({ params }: { params: { id: string } }) => {
 
   return (
     <>
-      <div className="flex gap-[50px] mt-5 w-[93%] text-white mx-20">
+      <div className="flex gap-[50px] mt-5 w-[93%] text-white mx-20 mb-10">
         <div className=" w-[28%]  bg-[#2b3e5d] p-5 rounded-[10px] font-bold text-white">
           <div className="rounded-xl bg-[#253651] flex flex-col p-5 items-start mt-auto gap-y-6">
             <h3 className="text-white font-semibold text-md">
@@ -47,7 +47,7 @@ const SingleItemPage = ({ params }: { params: { id: string } }) => {
               <div className="avatar absolute left-[-20px] drop-shadow-sm">
                 <div className="card-sm">
                   <img
-                    src="https://cdn.pixabay.com/photo/2016/11/18/23/38/child-1837375_640.png"
+                    src={item.product.image}
                     alt={"sa"}
                   />
                 </div>

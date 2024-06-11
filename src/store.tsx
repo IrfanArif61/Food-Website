@@ -12,6 +12,7 @@ export type StateType = {
   orders : any[]
   products : any
   count : number
+  productDetail : any
 };
 
 
@@ -31,7 +32,8 @@ const initialState:StateType = {
   totalWeight : 0,
   orders : [],
   products : {},
-  count : 0
+  count : 0,
+  productDetail : {}
 };
 
 const StoreContext = createContext<{
@@ -70,6 +72,12 @@ const StoreReducer = (state: StateType, action: Action) => {
         ...state,
         count : action.payload
       }
+
+      case 'detail':
+        return{
+          ...state,
+          productDetail : action.payload
+        }
     default:
       return state;
   }

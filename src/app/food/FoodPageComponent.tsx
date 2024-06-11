@@ -17,7 +17,7 @@ const FoodPageComponent = ({ title, foods }: Props) => {
 
   return (
     <div className="bg-white p-20 flex flex-col items-center">
-      <h3 className='text-black font-bold text-3xl mb-24 self-start'>{title ? title : 'Vegetarian Salad'}</h3>
+      <h3 className='text-black font-bold text-3xl mb-24 self-start'>{title ? title : 'All Products'}</h3>
 
       <div className="flex justify-between px-20 flex-wrap gap-y-20 w-full">
         {foods.slice(0, displayCount).map((item) => <FoodCard key={item._id} item={item} />)}

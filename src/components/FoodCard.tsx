@@ -1,6 +1,7 @@
 import { Products } from "@/Models/Product";
 import { useStore } from "@/store";
 import { foodsType } from "@/types";
+import Link from "next/link";
 import React from "react";
 import { FaRegHeart } from "react-icons/fa";
 
@@ -12,7 +13,9 @@ type Props = {
 function FoodCard({ size, item }: Props) {
   const { state, dispatch } = useStore();
 
-  const handleAddToCart = () => {
+  const handleAddToCart = (event:any) => {
+    event.stopPropagation();
+    event.preventDefault(); 
     const savedCartItems = localStorage.getItem("cartItems");
     const existingCartItems: foodsType[] = savedCartItems
       ? JSON.parse(savedCartItems)
@@ -35,7 +38,7 @@ function FoodCard({ size, item }: Props) {
   };
 
   return (
-    <div className="p-8 bg-[#f5f4f4] w-64 flex flex-col gap-2 drop-shadow-2xl rounded-2xl relative">
+    <Link href={`/food/${item._id}`} onClick={()=>dispatch({type:'detail',payload:item})} className="p-8 bg-[#f5f4f4] w-64 flex flex-col gap-2 drop-shadow-2xl rounded-2xl relative">
       <div className="avatar absolute right-[-40px] top-[-40px]">
         <div className={size === "sm" ? "card-sm" : "card-lg"}>
           <img src={item.image} />
@@ -67,13 +70,13 @@ function FoodCard({ size, item }: Props) {
           </button> */}
           <button
             onClick={handleAddToCart}
-            className=" w-full text-white px-3 py-2 drop-shadow-lg bg-green-600 rounded-full text-sm"
+            className=" w-full text-white px-3 py-2 drop-shadow-lg bg-green-600 rounded-full text-sm z-50"
           >
             Add to cart
           </button>
         </div>
       )}
-    </div>
+    </Link>
   );
 }
 

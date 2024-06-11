@@ -40,7 +40,7 @@ const Navbar = () => {
   return (
     <div className="h-[100px] max-w-[1500px] m-auto pl-[50px] pr-[50px] bg-blue flex justify-between items-center ">
       <div className="flex items-center justify-center">
-        {/* Logo */}
+        <img src="/logo.png" alt="" style={{width:25,height:25}}/>
         <Link href="/" className=" ml-4 text-xl font-bold text-textSoft">
           CleanPlate
         </Link>

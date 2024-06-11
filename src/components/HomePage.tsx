@@ -8,6 +8,7 @@ import { foodsType } from "@/types";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import Loader from "./Loader";
+import Link from "next/link";
 
 export default function HomePage() {
   const [foods, setFoods] = useState<foodsType[]>([]);
@@ -50,9 +51,9 @@ export default function HomePage() {
               for your convenience.
             </p>
             <div className="flex items-center gap-5">
-              <button className="p-3 min-w-[120px] cursor-pointer border-none rounded-2xl bg-gradient-to-r from-textSoft to-text text-white flex justify-center items-center animate-bounce  ">
+              <Link href={'/food'} className="p-3 min-w-[120px] cursor-pointer border-none rounded-2xl bg-gradient-to-r from-textSoft to-text text-white flex justify-center items-center animate-bounce  ">
                 Order Now
-              </button>
+              </Link>
             </div>
           </div>
           <div className="w-[800px] flex">
