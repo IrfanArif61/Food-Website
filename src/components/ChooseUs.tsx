@@ -41,8 +41,8 @@ function ChooseUs({}: Props) {
         <div className='w-[50%] flex flex-col gap-6'>
             <h2 className='text-black font-extrabold text-xl ml-8'>WHY PEOPLE CHOOSE US?</h2>
             {
-                data.map(item=>(
-                    <div className='flex items-center'>
+                data.map((item,index)=>(
+                    <div key={index} className='flex items-center'>
                         <div className='w-[13%]'>
                             <item.icon className='text-[4rem] text-green-600' />
                         </div>

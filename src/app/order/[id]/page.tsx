@@ -42,8 +42,8 @@ const SingleItemPage = ({ params }: { params: { id: string } }) => {
           </div>
         </div>
         <div className="w-[65%] bg-[#2b3e5d] p-5 rounded-[10px] flex flex-col items-center justify-center gap-y-8">
-          {requiredOrder.products.map((item: any) => (
-            <div className="w-[80%] items-center rounded-2xl bg-[#253651] drop-shadow-xl flex relative px-6 py-2">
+          {requiredOrder.products.map((item: any,index:number) => (
+            <div key={index} className="w-[80%] items-center rounded-2xl bg-[#253651] drop-shadow-xl flex relative px-6 py-2">
               <div className="avatar absolute left-[-20px] drop-shadow-sm">
                 <div className="card-sm">
                   <img
